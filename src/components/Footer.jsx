@@ -52,22 +52,14 @@ export default function Footer({ onSelectService }) {
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center gap-3">
               <img 
-                src="/spectranets-logo.png" 
+                src="/spectranets-logo-white.png" 
                 alt="SPECTRANETS" 
-                className="h-10 w-auto object-contain filter drop-shadow brightness-105"
+                className="h-10 sm:h-12 w-auto max-w-[220px] object-contain filter drop-shadow-[0_2px_12px_rgba(0,210,255,0.25)]"
+                loading="lazy"
                 onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextElementSibling.style.display = 'flex';
+                  e.target.src = '/spectranets-logo.png';
                 }}
               />
-              <div className="hidden items-center gap-2">
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-[#0756D9] to-[#2684F7] flex items-center justify-center text-white font-bold text-lg">
-                  S
-                </div>
-                <span className="text-xl font-extrabold tracking-tight text-white">
-                  SPECTRANETS
-                </span>
-              </div>
             </div>
 
             <p className="text-sm text-gray-300 leading-relaxed max-w-sm">

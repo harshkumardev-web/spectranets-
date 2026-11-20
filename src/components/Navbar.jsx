@@ -72,7 +72,7 @@ export default function Navbar({ onOpenContact }) {
       <div className="bg-[#071B49] text-white text-xs py-2 border-b border-white/10 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-[#0756D9]/30 border border-[#2684F7]/40 text-[#00D2FF] font-medium text-[11px] tracking-wide">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0756D9]/30 border border-[#2684F7]/40 text-[#00D2FF] font-medium text-[11px] tracking-wide">
               <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
               B2B ENTERPRISE SOLUTIONS ONLY
             </span>
@@ -105,8 +105,8 @@ export default function Navbar({ onOpenContact }) {
       {/* Main Sticky Navbar */}
       <div className={`transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#071B49]/95 backdrop-blur-md shadow-lg py-3 border-b border-white/10' 
-          : 'bg-[#071B49] py-4 border-b border-white/5'
+          ? 'bg-[#071B49]/95 backdrop-blur-md shadow-lg py-2.5 border-b border-white/10' 
+          : 'bg-[#071B49] py-3.5 border-b border-white/5'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -114,32 +114,21 @@ export default function Navbar({ onOpenContact }) {
             <a 
               href="#home" 
               onClick={(e) => handleNavClick(e, '#home')} 
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3 group focus:outline-none"
+              aria-label="SPECTRANETS Home"
             >
-              <div className="relative flex items-center">
+              <div className="relative flex items-center py-1">
                 <img 
-                  src="/spectranets-logo.png" 
-                  alt="SPECTRANETS Logo" 
-                  className="h-10 sm:h-11 w-auto object-contain filter drop-shadow brightness-105"
+                  src="/spectranets-logo-white.png" 
+                  alt="SPECTRANETS Enterprise Logo" 
+                  className="h-10 sm:h-12 md:h-12 lg:h-13 w-auto max-w-[210px] sm:max-w-[260px] object-contain filter drop-shadow-[0_2px_12px_rgba(0,210,255,0.25)] transition-transform duration-200 group-hover:scale-[1.03]"
+                  loading="eager"
+                  decoding="async"
                   onError={(e) => {
-                    // Fallback to text logo if image fails to render
-                    e.target.style.display = 'none';
-                    e.target.nextElementSibling.style.display = 'flex';
+                    // Fallback to unedited logo if white version not found
+                    e.target.src = '/spectranets-logo.png';
                   }}
                 />
-                <div className="hidden items-center gap-2">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-[#0756D9] to-[#2684F7] flex items-center justify-center text-white font-bold text-xl shadow-glow">
-                    S
-                  </div>
-                  <div>
-                    <span className="text-xl font-extrabold tracking-tight text-white block">
-                      SPECTRANETS
-                    </span>
-                    <span className="text-[10px] text-[#2684F7] tracking-wider uppercase font-semibold block -mt-1">
-                      Enterprise Connectivity
-                    </span>
-                  </div>
-                </div>
               </div>
             </a>
 
@@ -172,7 +161,7 @@ export default function Navbar({ onOpenContact }) {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-[#0756D9] via-[#2684F7] to-[#0756D9] bg-[length:200%_auto] hover:bg-right transition-all duration-500 shadow-md hover:shadow-glow group"
+                className="relative inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-[#0756D9] via-[#2684F7] to-[#0756D9] bg-[length:200%_auto] hover:bg-right transition-all duration-500 shadow-md hover:shadow-glow group cursor-pointer"
               >
                 <span>Talk to Our Experts</span>
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -207,9 +196,24 @@ export default function Navbar({ onOpenContact }) {
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#071B49] border-b border-white/10 px-4 pt-3 pb-6 space-y-2 mt-2 shadow-2xl">
-            <div className="p-3 mb-3 rounded-lg bg-blue-900/30 border border-blue-500/20 text-xs text-blue-200 flex items-center gap-2">
+            {/* Mobile Header with Logo */}
+            <div className="flex items-center justify-between pb-3 mb-2 border-b border-white/10">
+              <img 
+                src="/spectranets-logo-white.png" 
+                alt="SPECTRANETS" 
+                className="h-9 w-auto max-w-[180px] object-contain filter drop-shadow"
+                onError={(e) => {
+                  e.target.src = '/spectranets-logo.png';
+                }}
+              />
+              <span className="text-[10px] font-mono font-bold text-[#00D2FF] uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/20 border border-blue-400/30">
+                B2B ENTERPRISE
+              </span>
+            </div>
+
+            <div className="p-2.5 mb-3 rounded-lg bg-blue-900/30 border border-blue-500/20 text-xs text-blue-200 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#00D2FF] shrink-0" />
-              <span>B2B Corporate Connectivity & Enterprise Telecom Solutions</span>
+              <span>Dedicated Internet & Enterprise Telecom Solutions</span>
             </div>
 
             {navLinks.map((link) => (
