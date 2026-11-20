@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-blue: #0756D9;
+    --dark-navy: #071B49;
+    --secondary-blue: #2684F7;
+    --bg-light: #F5F8FF;
+    --text-main: #17233D;
+    --accent-cyan: #00D2FF;
+  }
+
+  body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #071B49;
+}
+::-webkit-scrollbar-thumb {
+  background: #2684F7;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0756D9;
+}
+
+/* Enterprise Mesh & Grid Backgrounds */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(7, 86, 217, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 86, 217, 0.05) 1px, transparent 1px);
+}
+
+.bg-dark-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 30%, rgba(38, 132, 247, 0.15), transparent 70%);
+}
+
+.bg-hero-glow {
+  background: radial-gradient(circle at 70% 30%, rgba(7, 86, 217, 0.35) 0%, rgba(7, 27, 73, 0.8) 50%, #071B49 100%);
+}
+
+/* Enterprise Fiber Glow Animation */
+@keyframes fiberPulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 4px #2684F7);
+  }
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 12px #00D2FF);
+  }
+}
+
+.animate-fiber {
+  animation: fiberPulse 3s ease-in-out infinite;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(7, 27, 73, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Badge styling */
+.enterprise-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
