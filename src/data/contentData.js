@@ -1,10 +1,15 @@
 export const companyInfo = {
   name: "SPECTRANETS",
-  tagline: "Enterprise Internet & Business Connectivity Solutions",
+  tagline: "Dedicated Internet Leased Line • SIP Trunking • Managed Wi-Fi, Cloud & Security",
+  topTagline: "Dedicated Internet Leased Line • SIP Trunking • Managed Wi-Fi, Cloud & Security",
   contactPhone: "9891406594",
   formattedPhone: "+91 98914 06594",
   whatsappUrl: "https://wa.me/919891406594?text=Hello%20Spectranets,%20I%20would%20like%20to%20enquire%20about%20enterprise%20connectivity%20services%20for%20my%20business.",
   callUrl: "tel:+919891406594",
+  address: "A 64, Sector 63, Noida, Uttar Pradesh – 201301, India",
+  addressLine1: "A 64, Sector 63",
+  addressLine2: "Noida, Uttar Pradesh – 201301, India",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=A+64,+Sector+63,+Noida,+Uttar+Pradesh+201301,+India",
   badge: "B2B Enterprise Only",
   b2bNotice: "SPECTRANETS delivers dedicated network and communication solutions exclusively to corporate enterprises, offices, and commercial organizations."
 };

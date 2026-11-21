@@ -8,7 +8,9 @@ import {
   Linkedin, 
   Twitter, 
   Globe, 
-  Building2 
+  Building2,
+  MapPin,
+  ArrowUpRight
 } from 'lucide-react';
 import { companyInfo } from '../data/contentData';
 import { servicesData } from '../data/servicesData';
@@ -165,6 +167,29 @@ export default function Footer({ onSelectService }) {
             </h4>
             
             <div className="space-y-3 text-xs sm:text-sm text-gray-300">
+              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                <span className="text-[11px] text-gray-400 block font-semibold flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#00D2FF]" />
+                  Corporate Office Address
+                </span>
+                <address className="not-italic text-xs text-gray-200 leading-relaxed pt-0.5">
+                  <strong className="text-white block font-semibold">Spectranets</strong>
+                  A 64, Sector 63, Noida,<br />
+                  Uttar Pradesh – 201301, India
+                </address>
+                <div className="pt-1">
+                  <a
+                    href={companyInfo.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#00D2FF] hover:underline"
+                  >
+                    <span>View on Google Maps</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+
               <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
                 <span className="text-[11px] text-gray-400 block font-semibold">Corporate Sales & Support</span>
                 <a

@@ -10,7 +10,8 @@ import {
   CheckCircle2, 
   Clock, 
   ShieldCheck, 
-  AlertCircle 
+  AlertCircle,
+  ArrowUpRight
 } from 'lucide-react';
 import { companyInfo } from '../data/contentData';
 import { servicesData } from '../data/servicesData';
@@ -177,6 +178,44 @@ export default function ContactSection({ selectedServicePreload }) {
                     <span>WhatsApp Chat</span>
                   </a>
                 </div>
+              </div>
+            </div>
+
+            {/* Official Corporate Office Address Card */}
+            <div className="rounded-2xl bg-white p-7 border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0756D9] text-[11px] font-bold tracking-wide uppercase border border-blue-100">
+                  <Building2 className="w-3.5 h-3.5 text-[#0756D9]" />
+                  Corporate Headquarters
+                </span>
+                <span className="text-[11px] font-mono text-slate-400 font-semibold">
+                  DELHI NCR / NOIDA
+                </span>
+              </div>
+
+              <div>
+                <h4 className="text-base font-bold text-[#071B49] flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-[#0756D9] shrink-0" />
+                  <span>Official Business Address</span>
+                </h4>
+                
+                <address className="mt-2.5 text-sm text-slate-700 not-italic leading-relaxed pl-7 space-y-1">
+                  <strong className="text-[#071B49] block text-base font-bold">Spectranets</strong>
+                  <div className="font-medium text-slate-800">A 64, Sector 63, Noida, Uttar Pradesh – 201301, India</div>
+                </address>
+              </div>
+
+              <div className="pt-2 pl-7">
+                <a
+                  href={companyInfo.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#F5F8FF] hover:bg-[#0756D9] text-[#0756D9] hover:text-white border border-blue-200 hover:border-[#0756D9] text-xs font-bold transition-all duration-200 shadow-sm group"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-[#2684F7] group-hover:text-white transition-colors" />
+                  <span>View on Google Maps</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
               </div>
             </div>
 
@@ -439,6 +478,7 @@ export default function ContactSection({ selectedServicePreload }) {
                     <div><strong>Organization:</strong> {formData.companyName}</div>
                     <div><strong>Service Selected:</strong> {formData.requiredService}</div>
                     <div><strong>Location:</strong> {formData.city}</div>
+                    <div><strong>Corporate Office:</strong> {companyInfo.address}</div>
                     <div><strong>Direct Hotline:</strong> {companyInfo.contactPhone}</div>
                   </div>
 

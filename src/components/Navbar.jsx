@@ -68,20 +68,20 @@ export default function Navbar({ onOpenContact }) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Enterprise Information Bar */}
+      {/* Top Enterprise Information Bar - Desktop & Laptop */}
       <div className="bg-[#071B49] text-white text-xs py-2 border-b border-white/10 hidden md:block">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0756D9]/30 border border-[#2684F7]/40 text-[#00D2FF] font-medium text-[11px] tracking-wide">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3 lg:gap-4 shrink-0">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0756D9]/30 border border-[#2684F7]/40 text-[#00D2FF] font-medium text-[11px] tracking-wide shrink-0">
               <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
               B2B ENTERPRISE SOLUTIONS ONLY
             </span>
-            <span className="text-gray-300 text-xs hidden lg:inline">
-              Dedicated Internet Leased Lines • SIP Trunking • Managed Cloud & Security
+            <span className="text-gray-200 text-xs tracking-wide">
+              Dedicated Internet Leased Line • SIP Trunking • Managed Wi-Fi, Cloud & Security
             </span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5 lg:gap-6 shrink-0">
             <a 
               href={companyInfo.callUrl} 
               className="flex items-center gap-1.5 text-gray-200 hover:text-white transition-colors font-medium"
@@ -100,6 +100,13 @@ export default function Navbar({ onOpenContact }) {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Top Header Tagline Bar */}
+      <div className="bg-[#051438] text-white text-[11px] py-1.5 px-3 border-b border-white/10 md:hidden flex items-center justify-center text-center">
+        <span className="text-gray-200 font-medium leading-tight">
+          Dedicated Internet Leased Line • SIP Trunking • Managed Wi-Fi, Cloud & Security
+        </span>
       </div>
 
       {/* Main Sticky Navbar */}
@@ -213,7 +220,9 @@ export default function Navbar({ onOpenContact }) {
 
             <div className="p-2.5 mb-3 rounded-lg bg-blue-900/30 border border-blue-500/20 text-xs text-blue-200 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#00D2FF] shrink-0" />
-              <span>Dedicated Internet & Enterprise Telecom Solutions</span>
+              <span className="leading-snug">
+                Dedicated Internet Leased Line • SIP Trunking • Managed Wi-Fi, Cloud & Security
+              </span>
             </div>
 
             {navLinks.map((link) => (
